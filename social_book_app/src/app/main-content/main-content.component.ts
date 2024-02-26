@@ -1,43 +1,13 @@
-import { Component, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { PostService } from './post.service';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
-import { MainContentComponent } from './main-content/main-content.component';
-import { RightSidebarComponent } from './right-sidebar/right-sidebar.component';
+import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 @Component({
-  selector: 'app-root',
+  selector: 'app-main-content',
   standalone: true,
-  imports: [
-    RouterOutlet, CommonModule,NavbarComponent,LeftSidebarComponent,MainContentComponent,RightSidebarComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  imports: [NgFor],
+  templateUrl: './main-content.component.html',
+  styleUrl: './main-content.component.css'
 })
-
-export class AppComponent {
-  userprofilephoto = "https://images.unsplash.com/photo-1707699400213-847b2b852300?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNDV8fHxlbnwwfHx8fHw%3D";
-
-  ys1: { image_url: string; text: string } = {
-    image_url: "https://images.unsplash.com/photo-1682686581413-0a0ec9bb35bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNDZ8fHxlbnwwfHx8fHw%3D",
-    text: "Swimming"
-  }
-
-  ys2: { image_url: string; text: string } = {
-    image_url: "https://images.unsplash.com/photo-1708281789753-a414433ea272?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNTB8fHxlbnwwfHx8fHw%3D",
-    text: "Star Gazing"
-  }
-
-  ys3: { image_url: string; text: string } = {
-    image_url: "https://images.unsplash.com/photo-1707343843344-011332037abb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNTF8fHxlbnwwfHx8fHw%3D",
-    text: "Beach Exploration"
-  }
-
-  ys4: { image_url: string; text: string } = {
-    image_url: "https://images.unsplash.com/photo-1708246116930-98cdc77b46c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNTR8fHxlbnwwfHx8fHw%3D",
-    text: "Travelling"
-  }
-
+export class MainContentComponent {
   your_story = "https://images.unsplash.com/photo-1706550037742-0e6b5d786811?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNTd8fHxlbnwwfHx8fHw%3D";
 
   story1 = "https://images.unsplash.com/photo-1706550037742-0e6b5d786811?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNTd8fHxlbnwwfHx8fHw%3D"
@@ -62,9 +32,7 @@ export class AppComponent {
     name: "EZSNIPPET"
   }
 
-  
-
-  user: { firstname: string; lastname: string } = {
+  user: { firstname:string, lastname: string } = {
     firstname: "Atharva",
     lastname: "Zanwar"
   }
@@ -112,29 +80,6 @@ export class AppComponent {
       likeCount: 200,
       commentCount: 5,
       shareCount: 80,
-    },
-  ]
-  
-  links = [
-    {
-      link_img_url : "https://i.postimg.cc/RCj4MjnC/news.png",
-      link_name : "Latest News"
-    },
-    {
-      link_img_url: "https://i.postimg.cc/RCj4MjnC/news.png",
-      link_name : "Latest News"
-    },
-    {
-      link_img_url : "https://i.postimg.cc/RCj4MjnC/news.png",
-      link_name : "Latest News"
-    },
-    {
-      link_img_url : "https://i.postimg.cc/RCj4MjnC/news.png",
-      link_name : "Latest News"
-    },
-    {
-      link_img_url : "https://i.postimg.cc/RCj4MjnC/news.png",
-      link_name : "Latest News"
-    },
+    }
   ]
 }

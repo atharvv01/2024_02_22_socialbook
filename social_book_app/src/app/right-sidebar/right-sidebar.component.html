@@ -1,0 +1,37 @@
+<div class="right-sidebar">
+    <div class="sidebar-title">
+      <h4>Events</h4>
+      <a href="#">See All</a>
+    </div>
+
+    <div *ngFor="let d of Date" class="event">
+      <div class="left-event">
+        <h3>{{d.Day}}</h3>
+        <span>{{d.Month}}</span>
+      </div>
+      <div class="right-event">
+        <h4>{{d.desc}}</h4>
+        <p><i class="fas fa-map-marker-alt"></i>{{d.venue}}</p>
+        <a href="#">More Info</a>
+      </div>
+    </div>
+
+    <div class="sidebar-title">
+      <h4>Advertisement</h4>
+      <a href="#">close</a>
+    </div>
+    <img
+      src="https://i.postimg.cc/CLXYx9BL/advertisement.png"
+      class="siderbar-ads"
+    />
+    <div class="sidebar-title">
+      <h4>Conversation</h4>
+      <a href="#">Hide Chat</a>
+    </div>
+    <div *ngFor="let user of onlineUsers" class="online-list">
+      <div class="online">
+        <img [src]="user.image_url" />
+      </div>
+      <p>{{ user.name }}</p>
+    </div>
+  </div>
